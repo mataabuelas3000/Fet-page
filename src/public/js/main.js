@@ -81,3 +81,17 @@ function main() {
 
 }
 main();
+
+document.getElementById('about-info').addEventListener('click', function() {
+  document.getElementById('container-info').style.display = 'flex';
+});
+
+document.querySelector('.close-btn').addEventListener('click', function() {
+  document.getElementById('container-info').style.display = 'none';
+});
+
+window.addEventListener('click', function(event) {
+  if (event.target.classList.contains('overlay2')) {
+    document.getElementById('container-info').style.display = 'none';
+  }
+});
