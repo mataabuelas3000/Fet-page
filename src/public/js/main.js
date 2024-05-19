@@ -83,15 +83,30 @@ function main() {
 main();
 
 document.getElementById('about-info').addEventListener('click', function() {
-  document.getElementById('container-info').style.display = 'flex';
+  var modal = document.getElementById('container-info');
+  modal.classList.remove('hide2');
+  modal.style.display = 'flex';
+  setTimeout(function() { // Agregar una pequeña demora para asegurar que la transición se aplique
+    modal.classList.add('show2');
+  }, 10);
 });
 
 document.querySelector('.close-btn').addEventListener('click', function() {
-  document.getElementById('container-info').style.display = 'none';
+  var modal = document.getElementById('container-info');
+  modal.classList.remove('show2');
+  modal.classList.add('hide2');
+  setTimeout(function() {
+    modal.style.display = 'none';
+  }, 500); // 500ms corresponde a la duración de la transición en CSS
 });
 
 window.addEventListener('click', function(event) {
+  var modal = document.getElementById('container-info');
   if (event.target.classList.contains('overlay2')) {
-    document.getElementById('container-info').style.display = 'none';
+    modal.classList.remove('show2');
+    modal.classList.add('hide2');
+    setTimeout(function() {
+      modal.style.display = 'none';
+    }, 500); // 500ms corresponde a la duración de la transición en CSS
   }
 });

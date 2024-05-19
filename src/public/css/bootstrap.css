@@ -4151,10 +4151,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .navbar-fixed-top,
 .navbar-fixed-bottom {
-  position: fixed;
+  position:fixed;
   right: 0;
   left: 0;
-  z-index: 1030;
+  z-index: 999;
 }
 @media (min-width: 768px) {
   .navbar-fixed-top,
@@ -6577,5 +6577,8 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+}
+.mt{
+  margin-top: 20px;
 }
 /*# sourceMappingURL=bootstrap.css.map */
